@@ -1,6 +1,6 @@
 # NETFLIX-VERIFY
 
-最新版本: `v3.0-stable`
+最新版本: `v3.0-slim`
 
 流媒体NetFlix解锁检测脚本，使用Go语言编写。
 
@@ -13,6 +13,13 @@ DisneyPlus 解锁检测： https://github.com/sjlleo/VerifyDisneyPlus
 Youtube 缓存节点、地域信息检测：https://github.com/sjlleo/TubeCheck
 
 ## 新特性
+
+**2022/07/12**
+
+- 为方便 linux 平台管道符操作：
+    - 删除 `printer.go` 中的 `printVersion`, `printResult("6", fr.Res[2])`，只保留 IPv4 检测结果的输出
+    - 简化输出结果。检测结果修改为只输出关键信息，修改输出地区信息为英文大写
+
 
 **2022/05/21**
 
