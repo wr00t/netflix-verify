@@ -2,7 +2,7 @@ package verify
 
 import (
 	"strconv"
-
+	"strings"
 	"github.com/sjlleo/netflix-verify/util"
 )
 
@@ -48,7 +48,8 @@ func (v *IPv4Verifier) Execute() *VerifyResponse {
 					v.upgradeStatus(UnblockNonSelfMadeMovie)
 				}
 				response.CountryCode = res.CountryCode
-				response.CountryName = util.CountryCodeToCountryName(res.CountryCode)
+				response.CountryName = strings.ToUpper(res.CountryCode)
+				// response.CountryName = util.CountryCodeToCountryName(res.CountryCode)
 			default:
 			}
 		}
@@ -60,7 +61,8 @@ func (v *IPv4Verifier) Execute() *VerifyResponse {
 		if res.CountryCode != "" {
 			v.unblockStatus = CustomMovieUnblock
 			response.CountryCode = res.CountryCode
-			response.CountryName = util.CountryCodeToCountryName(res.CountryCode)
+			response.CountryName = strings.ToUpper(res.CountryCode)
+			// response.CountryName = util.CountryCodeToCountryName(res.CountryCode)
 		} else {
 			v.unblockStatus = CustomMovieBlock
 		}
